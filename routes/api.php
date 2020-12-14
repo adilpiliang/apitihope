@@ -18,6 +18,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+Route::post('login', 'User\UserController@login');
+Route::post('register', 'User\UserController@register');
+Route::get('logout', 'User\UserController@logout');
+Route::post('changepassword', 'User\UserController@ch    angePassword')->middleware('auth:api');
 Route::get('matkul', 'Matkul\MatkulController@matkul');
 Route::get('matkul/{id}', 'Matkul\MatkulController@matkulByID');
 Route::get('materi', 'Materi\MateriController@materi');

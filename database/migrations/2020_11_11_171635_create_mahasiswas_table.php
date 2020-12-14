@@ -21,6 +21,8 @@ class CreateMahasiswasTable extends Migration
             $table->string('tempat_lhr_mhs',50);
             $table->date('tgl_lhr_mhs');
             $table->char('no_hp_mhs',12);
+            $table->string('email_mhs',100);
+            $table->string('password',30);
             $table->timestamps();
         });
     }
