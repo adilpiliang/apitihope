@@ -26,3 +26,6 @@ Route::post('changepassword', 'User\UserController@ch    angePassword')->middlew
 Route::get('matkul', 'Matkul\MatkulController@matkul');
 Route::get('matkul/{id}', 'Matkul\MatkulController@matkulByID');
 Route::get('materi', 'Materi\MateriController@materi');
+
+//Auth
+Route::post('login', 'API\UserController@login');

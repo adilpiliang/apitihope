@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class UserModel extends Authenticatable
 {
+    use Notifiable, HasApiTokens;
     protected $primaryKey = 'npm';
     /**
      * The attributes that are mass assignable.
@@ -16,7 +17,7 @@ class UserModel extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'npm_mhs', 'email', 'password','nama_mhs','no_hp_mhs'
+        'npm', 'email', 'password','nama_mhs','no_hp_mhs'
     ];
 
     /**
@@ -36,12 +37,4 @@ class UserModel extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function suara(){
-        return $this->belongsToMany('App\Pemilu', 'suaras', 'npm', 'id_pemilu');
-    }
-
-    public function user(){
-        return $this->hasMany('App\Calon','npm','npm');
-    }
 }

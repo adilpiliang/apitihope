@@ -10,6 +10,6 @@ use App\Models\MateriModel;
 class MateriController extends Controller
 {
     public function materi(){
-        return response()->json(MateriModel::get(), 200);
+        return response()->json(MateriModel::all(), 200);
 }
 }

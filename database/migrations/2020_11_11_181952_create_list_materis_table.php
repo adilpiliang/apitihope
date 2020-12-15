@@ -18,6 +18,7 @@ class CreateListMaterisTable extends Migration
             $table->integer('id_matkul')->unsigned();
             $table->foreign('id_matkul')->references('id_matkul')->on('matkuls');
             $table->string('judul_materi',100);
+            $table->string('link_materi',500);
             $table->timestamps();
         });
     }

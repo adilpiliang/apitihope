@@ -10,7 +10,7 @@ use App\Models\MatkulModel;
 class MatkulController extends Controller
 {
     public function matkul(){
-        return response()->json(MatkulModel::get());
+        return response()->json(MatkulModel::all());
     }
     public function matkulByID($id){
         return response()->json(MatkulModel::find($id));
